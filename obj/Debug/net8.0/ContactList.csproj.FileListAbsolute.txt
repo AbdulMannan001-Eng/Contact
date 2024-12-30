@@ -12,3 +12,4 @@ C:\Users\PC\Desktop\ContactList\obj\Debug\net8.0\refint\ContactList.dll
 C:\Users\PC\Desktop\ContactList\obj\Debug\net8.0\ContactList.pdb
 C:\Users\PC\Desktop\ContactList\obj\Debug\net8.0\ContactList.genruntimeconfig.cache
 C:\Users\PC\Desktop\ContactList\obj\Debug\net8.0\ref\ContactList.dll
+C:\Users\PC\Desktop\ContactList\obj\Debug\net8.0\ContactList.sourcelink.json

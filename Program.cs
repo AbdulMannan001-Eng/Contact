@@ -119,16 +119,27 @@ static void UpdateContact(Dictionary<string, ContatoList> contactList)
     Console.WriteLine("Enter the name of the contact to be updated: ");
     string name = Console.ReadLine()!;
 
-    if (contactList.ContainsKey(name))
+    if (contactList.TryGetValue(name, out ContatoList? existContact))
     {
-    Console.WriteLine("Enter your new phone number");
-    string phonenumber = Console.ReadLine()!;
+        Console.WriteLine("Enter your new phone number");
+        string phonenumber = Console.ReadLine()!;
 
-    Console.WriteLine("Enter your new Email: ");
-    string email = Console.ReadLine()!;
+        if (string.IsNullOrWhiteSpace(phonenumber))
+        {
+            phonenumber = existContact.PhoneNumber;
+        }
 
-    contactList[name] = new ContatoList(name, phonenumber, email);
-    Console.WriteLine("Contact updated successfully!");
+        Console.WriteLine("Enter your new Email: ");
+        string email = Console.ReadLine()!;
+        if (string.IsNullOrWhiteSpace(email))
+        {
+            email = existContact.Email;
+        }
+
+
+
+        contactList[name] = new ContatoList(name, phonenumber, email!);
+        Console.WriteLine("Contact updated successfully!");
     }
     else
     {
